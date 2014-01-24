@@ -1,6 +1,6 @@
 ;'use strict';
 
-angular.module('ui-multi-gravatar', [])
+angular.module('ui-multi-avatar', [])
   .directive('multiAvatar', ['md5', function (md5) {
     return {
       restrict: 'E',
