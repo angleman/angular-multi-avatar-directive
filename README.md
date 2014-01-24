@@ -2,35 +2,51 @@
 
 ## How to Use
 
-Ruleset:
+Will apply the first found in the following order:
 
-0. Will use facebook image first
-0. Will use twitter image
-0. Will user github image if no facebook ID, but has a github username
-0. Will fallback to gravatar image (which itself will fallback to a blank user image)
+0. Facebook ID
+0. Twitter ID
+0. Github ID
+0. Gravatar Email ID or Hash image
+0. Blank user image
 
 In your HTML, use the following. Depending on what your user has defined, it'll
 display an avatar:
 
-```
-<div ng-app='YourApp' ng-controller='UsersController'>
-  <multi-avatar data-facebook-id='' data-twitter-id='' data-github-username='' data-email=''>
-</div>
+```html
+<multi-avatar 
+    data-facebook-id='' data-twitter-id='' data-github-id='' data-gravatar-id=''
+>
 ```
 
 In your Javascript (coffee):
 
-```
-YourApp = angular.module("Centrifuge", ["multi-avatar"]);
-YourApp.controller "UsersController", ($scope, 'multi-avatar')
+```js
+app = angular.module("yourmodule", ["multi-avatar"]);
 ```
 
 ## Find More Information
 
-Extended as seen at [Creating Simple Directive in Angular](http://www.angularails.com/articles/creating_simple_directive_in_angular) to:
+Reworked and extended [Creating Simple Directive in Angular](http://www.angularails.com/articles/creating_simple_directive_in_angular) to now include:
+* Standardized data attribute naming 
+* Include Facebook
 * Include Twitter
-* Include Bower
-* Include NPM
+* Include GitHub
+* Include Gravatar Email address and Hash support
+
+## Install
+
+Bower
+
+```sh
+bower install angular-multi-avatar
+```
+
+NPM
+
+```sh
+npm install angular-multi-avatar
+```
 
 ## License
 
