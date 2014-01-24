@@ -1,6 +1,6 @@
 {
-  "name": "angular-multi-avatar-directive",
-  "version": "0.2.0",
+  "name": "angular-multi-avatar",
+  "version": "0.2.1",
   "description": "AngularJS Multi-Avatar Directive supporting facebook, twitter, github and gravatar",
   "main": "index.js",
   "scripts": {
