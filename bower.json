@@ -1,0 +1,29 @@
+{
+  "name": "angular-multi-avatar-directive",
+  "version": "0.2.0",
+  "homepage": "https://github.com/angleman/angular-multi-avatar-directive",
+  "description": "AngularJS Multi-Avatar Directive",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "directive",
+    "social",
+    "avatar",
+    "facebook",
+    "twitter",
+    "gravatar",
+    "github"
+  ],
+  "authors": [
+    "angleman",
+    "jwo"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
