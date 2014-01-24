@@ -2,7 +2,7 @@
   "name": "angular-multi-avatar-directive",
   "version": "0.2.0",
   "homepage": "https://github.com/angleman/angular-multi-avatar-directive",
-  "description": "AngularJS Multi-Avatar Directive",
+  "description": "AngularJS Multi-Avatar Directive supporting facebook, twitter, github and gravatar",
   "keywords": [
     "angular",
     "angularjs",

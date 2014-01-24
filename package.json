@@ -1,7 +1,7 @@
 {
   "name": "angular-multi-avatar-directive",
   "version": "0.2.0",
-  "description": "AngularJS Multi-Avatar Directive",
+  "description": "AngularJS Multi-Avatar Directive supporting facebook, twitter, github and gravatar",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
