@@ -2,7 +2,7 @@
 
 ## How to Use
 
-Will apply the first found in the following order:
+Will apply in the following order:
 
 0. Facebook ID
 0. Twitter ID
