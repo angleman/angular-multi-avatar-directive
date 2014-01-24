@@ -13,16 +13,18 @@ angular.module('ui-multi-avatar', [])
 			  {id: 'gravatar', tpl: '<img src="https://secure.gravatar.com/avatar/{id}?s=200&d=mm" style="width:200px; height:200px" class="img-responsive"/>'} ,
 		  ]
 		  for (var s=0; s<services.length; s++) {
-			  var service = services[s],
-			      attr    = service.id + 'Id',
-				  id      = attrs[attr];
-			  if (id && id.length > 0) {
-				  if (id == 'gravatarId' && id.split('@').length>1) {
-					  id = md5.createHash(id.toLowerCase());
-				  }
-				  var tag = service.tpl.replace('{id}', id);
-				  element.append(tag);
-			  }
+			var service = services[s],
+				attr    = service.id + 'Id',
+				id      = attrs[attr]
+				isGravatar = attr == 'gravatarId';
+			if (isGravatar || (id && id.length > 0)) {
+				if (!id) { id = ''}
+				if (isGravatar && id.split('@').length>1) {
+				  id = md5.createHash(id.toLowerCase());
+				}
+				var tag = service.tpl.replace('{id}', id);
+				element.append(tag);
+			}
 		  }
       }
     };
