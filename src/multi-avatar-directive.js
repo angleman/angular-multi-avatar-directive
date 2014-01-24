@@ -6,25 +6,24 @@ angular.module('ui-multi-gravatar', [])
       restrict: 'E',
       link:function(scope, element, attrs) {
 
-        var facebookId = attrs.facebookId;
-        var githubUsername = attrs.githubUsername;
-        var email = attrs.email;
-
-        var tag = '';
-        if ((facebookId !== null) && (facebookId !== undefined) && (facebookId !== '')) {
-          tag = '<img src="http://graph.facebook.com/' + facebookId + '/picture?width=200&height=200" class="img-responsive"/>'
-        } else if ((githubUsername !== null) && (githubUsername !== undefined) && (githubUsername !== '')){
-          tag = '<img src="https://identicons.github.com/' + githubUsername + '.png" style="width:200px; height:200px" class="img-responsive"/>';
-        } else { 
-          var hash = ""
-          if ((email !== null) && (email !== undefined) && (email !== '')){
-            var hash = md5.createHash(email.toLowerCase());
-          }
-          var src = 'https://secure.gravatar.com/avatar/' + hash + '?s=200&d=mm'
-          tag = '<img src=' + src + ' class="img-responsive"/>'
-        }
-
-        element.append(tag);
+		  var services = [
+			  {id: 'facebook', tpl: '<img src="http://graph.facebook.com/{id}/picture?width=200&height=200" class="img-responsive"/>'} ,
+			  {id: 'twitter',  tpl: '<img src="https://pbs.twimg.com/profile_images/{id}_bigger.jpeg" class="img-responsive"/>'} ,
+			  {id: 'github',   tpl: '<img src="https://identicons.github.com/{id}.png" style="width:200px; height:200px" class="img-responsive"/>'} ,
+			  {id: 'gravatar', tpl: '<img src="https://secure.gravatar.com/avatar/{id}?s=200&d=mm" style="width:200px; height:200px" class="img-responsive"/>'} ,
+		  ]
+		  for (var s=0; s<services.length; s++) {
+			  var service = services[s],
+			      attr    = service.id + 'Id',
+				  id      = attrs[attr];
+			  if (id && id.length > 0) {
+				  if (id == 'gravatarId' && id.split('@').length>1) {
+					  id = md5.createHash(id.toLowerCase());
+				  }
+				  var tag = service.tpl.replace('{id}', id);
+				  element.append(tag);
+			  }
+		  }
       }
     };
   }]);
